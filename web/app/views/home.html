@@ -1,0 +1,76 @@
+<div class="jumbotron">
+	<h1>House for rent scrapper</h1>
+	<h4>taken from sub100.com.br</h4>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<div ng-show="updated_at" class="alert alert-warning">
+			<p>Última atualização: {{helper.formatDate(updated_at, 'DD/MM/YYYY HH:MM:SS')}}</p>
+		</div>
+		<h4>Filtros</h4>
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="filter-type">Tipo</label>
+				<select id="filter-type" class="form-control" name="type">
+					<option value="0">-- Todos --</option>
+					<option value="1">Apartamento</option>
+					<option value="2">Casas ou Sobrados</option>
+					<option value="3">Residenciais</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="filter-rooms">Quartos</label>
+				<select id="filter-rooms" class="form-control" name="rooms">
+					<option value="0">-- Todos --</option>
+					<option value="1">1 Quarto</option>
+					<option value="2">2 Quartos</option>
+					<option value="3">3 Quartos</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="filter-price-min">Valor</label>
+				<select id="filter-price-min" class="form-control" name="rooms">
+					<option value="0">-- Todos --</option>
+					<option ng-repeat="price in range_prices_list" value="{{price}}">{{helper.formatCurrencyBRL(price)}}</option>
+				</select>
+				<label for="filter-price-max">até</label>
+				<select id="filter-price-max" class="form-control" name="rooms">
+					<option value="0">-- Todos --</option>
+					<option ng-repeat="price in range_prices_list" value="{{price}}">{{helper.formatCurrencyBRL(price)}}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="filter-real-state">Imobiliária</label>
+				<select id="filter-real-state" class="form-control" name="real_state">
+					<option value="0">-- Todas --</option>
+					<option ng-repeat="item in real_state_list" value="{{item.id}}">{{item.name}}</option>
+				</select>
+			</div>
+			<a href="#" class="btn btn-primary" ng-click="filterResults()">Filtrar</a>
+		</div>
+	</div>
+</div>
+<hr />
+<table class="table table-striped table-condensed">
+	<thead>
+		<tr>
+			<th>Foto</th>
+			<th>Dados</th>
+			<th>Quartos</th>
+			<th>Imobiliária</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr valign="top" ng-repeat="row in result" ng-init="realStateAgency=searchRealStateAgency(row.dealer)">
+		  <td width="120"><a href="http://www.sub100.com.br/{{row.url}}"><img ng-src="{{row.picture}}" style="max-width: 100px;"/></a></td>
+		  <td>
+			<strong>{{row.type}}</strong><br />
+			  {{row.location}}<br />
+			  {{row.street}}<br />
+			<strong>{{helper.formatCurrencyBRL(row.price)}}<br /></strong>
+		  </td>
+		  <td width="50" class="text-center">{{row.rooms}}</td>
+		  <td width="200">{{realStateAgency.name + realStateAgency.rigorous}}</td>
+		</tr>
+	</tbody>
+</table>

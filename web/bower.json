@@ -1,0 +1,26 @@
+{
+  "name": "sub100-realstaterent-search-web",
+  "authors": [
+    "Konnng Agência Digital <falecom@konnng.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "http://www.konnng.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "angular-sanitize": "^1.5.9",
+    "jquery": "1.12.4",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.17.1"
+  }
+}
