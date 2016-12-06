@@ -5,7 +5,7 @@ var app = angular.module('sub100RealStateSearch', ['ngRoute', 'ngSanitize'])
 app.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routeProvider) {
   var routes = [{
     url: '/',
-    template: '/app/views/home.html',
+    template: 'app/views/home.html',
     controller: 'homeController'
   }]
 

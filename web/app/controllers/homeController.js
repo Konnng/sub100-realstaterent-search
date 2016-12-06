@@ -100,7 +100,7 @@ app.controller('homeController', ['$scope', '$http', '$location', '$route', 'hel
     return $.grep(Controller.vars.db.real_state_list, function (item) { return item.id === id }).shift() || false
   }
 
-  $http.get('/app/data/db.json').then(function (response) {
+  $http.get('app/data/db.json').then(function (response) {
     if (response.status !== 200) {
       throw new Error('Error loading database file.')
     }
