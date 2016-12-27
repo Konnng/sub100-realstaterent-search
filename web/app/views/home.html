@@ -84,7 +84,7 @@
 		</thead>
 		<tbody>
 			<tr valign="top" ng-repeat="row in result" ng-init="realStateAgency=searchRealStateAgency(row.dealer)">
-			  <td width="120"><a href="http://www.sub100.com.br/{{row.url}}"><img ng-src="{{row.picture}}" style="max-width: 100px;"/></a></td>
+			  <td width="120"><a href="http://www.sub100.com.br{{row.url}}"><img ng-src="{{row.picture}}" style="max-width: 100px;"/></a></td>
 			  <td>
 				<strong>{{row.type}}</strong><br />
 				  {{row.location}}<br />
