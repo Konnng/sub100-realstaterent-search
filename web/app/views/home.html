@@ -89,11 +89,11 @@
 		</thead>
 		<tbody>
 			<tr valign="top" ng-repeat="row in result" ng-init="realStateAgency=searchRealStateAgency(row.dealer)">
-			  <td width="120"><a href="http://www.sub100.com.br{{row.url}}"><img ng-src="{{row.picture}}" style="max-width: 100px;"/></a></td>
+			  <td width="120"><a href="http://www.sub100.com.br{{row.url}}"><img ng-src="{{row.picture}}"  onerror="this.src='assets/images/facebook-share-image.png'" style="max-width: 100px;"/></a></td>
 			  <td>
-				<strong>{{row.type}}</strong><br />
-				  {{row.location}}<br />
-				  {{row.street}}<br />
+				<strong><a href="http://www.sub100.com.br{{row.url}}"  target="_blank">{{row.type}}</a></strong><br />
+				{{row.location}}<br />
+				   <a href="https://www.google.com.br/maps/search/{{row.street}}+{{row.location}}" target="_blank">{{row.street}}</a><br />
 				<strong>{{helper.formatCurrencyBRL(row.price)}}<br /></strong>
 			  </td>
 			  <td>{{row.suites}}</td>
