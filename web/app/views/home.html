@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="row" ng-show="!result">
+	<div class="row" ng-show="!loaded">
 		<div class="col-xs-12">
 			<div class="progress">
 			  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width: 100%">
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 </div>
-<div class="container-fluid" ng-show="result && result.length">
+<div class="container-fluid" ng-show="loaded">
 	<div class="row">
 		<div class="col-xs-12">
 			<div ng-show="updated_at" class="alert alert-warning">
@@ -71,12 +71,14 @@
 		</div>
 	</div>
 	<hr />
-	<table class="table table-striped table-condensed">
+	<table class="table table-striped table-condensed" ng-show="result && result.length">
 		<thead>
 			<tr>
 				<th>Foto</th>
 				<th>Dados</th>
+				<th>Suítes</th>
 				<th>Quartos</th>
+				<th>Total Quartos</th>
 				<th>Imobiliária</th>
 			</tr>
 		</thead>
@@ -89,13 +91,21 @@
 				  {{row.street}}<br />
 				<strong>{{helper.formatCurrencyBRL(row.price)}}<br /></strong>
 			  </td>
-			  <td width="50" class="text-center">{{row.rooms}}</td>
-			  <td width="200">{{realStateAgency.name + realStateAgency.rigorous}}</td>
+			  <td>{{row.suites}}</td>
+			  <td>{{row.rooms}}</td>
+			  <td width="50" class="text-center">{{row.rooms_total}}</td>
+			  <td width="200">
+				  	{{realStateAgency.name + realStateAgency.rigorous}}<br />
+					<strong>{{realStateAgency.phone}}</strong>
+			  </td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="container">
-	  <div class="alert alert-info">
+	  <div class="alert alert-danger" ng-show="loaded && (!result || !result.length)">
+		<p>Sem resultados encontrados.</p>
+	  </div>
+	  <div class="alert alert-info" ng-show="result && result.length">
 		<p>
 		  <strong>Imobiliárias</strong><br />
 		  * - dependendo do valor do imóvel x renda do fiador precisará de mais 1 imóvel/fiador para locação <br />

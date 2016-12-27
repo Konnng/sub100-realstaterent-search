@@ -19,9 +19,11 @@ app.controller('homeController', ['$scope', '$http', '$location', '$route', 'hel
       }
 
       $scope.range_prices_list.push($scope.range_price_max)
+      $scope.loaded = true
     }
   }
 
+  $scope.loaded = false
   $scope.helper = helper
   $scope.filterResults = function () {
     var filters = {
