@@ -1,6 +1,6 @@
 'use strict'
 
-var app = angular.module('sub100RealStateSearch', ['ngRoute', 'ngSanitize'])
+var app = angular.module('sub100RealStateSearch', ['ngRoute', 'ngSanitize', 'angularLazyImg'])
 
 app.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routeProvider) {
   var routes = [{
@@ -16,6 +16,17 @@ app.config(['$httpProvider', '$routeProvider', function ($httpProvider, $routePr
   })
 
   $routeProvider.otherwise({ redirectTo: '/' })
+}])
+.config(['lazyImgConfigProvider', function (lazyImgConfigProvider) {
+  lazyImgConfigProvider.setOptions({
+    errorClass: 'error',
+    onError: function (image) {
+      var img = $(image['$elem'][0])
+
+      img.attr('src', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8XQ8AAnsBfKyAV94AAAAASUVORK5CYII=')
+      .closest('figure').addClass('error')
+    }
+  })
 }])
 .directive('a', function () {
   return {

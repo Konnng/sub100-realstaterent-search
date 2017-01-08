@@ -89,20 +89,26 @@
 		</thead>
 		<tbody>
 			<tr valign="top" ng-repeat="row in result" ng-init="realStateAgency=searchRealStateAgency(row.dealer)">
-			  <td width="120"><a href="http://www.sub100.com.br{{row.url}}"><img ng-src="{{row.picture}}" style="max-width: 100px;"/></a></td>
-			  <td>
-				<strong>{{row.type}}</strong><br />
-				  {{row.location}}<br />
-				  {{row.street}}<br />
-				<strong>{{helper.formatCurrencyBRL(row.price)}}<br /></strong>
-			  </td>
-			  <td>{{row.suites}}</td>
-			  <td>{{row.rooms}}</td>
-			  <td width="50" class="text-center">{{row.rooms_total}}</td>
-			  <td width="200">
+			    <td width="120">
+				  	<figure>
+						<a href="http://www.sub100.com.br{{row.url}}">
+					  		<img lazy-img="{{row.picture}}" alt="" />
+						</a>
+				  	</figure>
+		  		</td>
+			  	<td>
+					<strong>{{row.type}}</strong><br />
+					  {{row.location}}<br />
+					  {{row.street}}<br />
+					<strong>{{helper.formatCurrencyBRL(row.price)}}<br /></strong>
+			  	</td>
+			  	<td>{{row.suites}}</td>
+			  	<td>{{row.rooms}}</td>
+			  	<td width="50" class="text-center">{{row.rooms_total}}</td>
+			  	<td width="200">
 				  	{{realStateAgency.name + realStateAgency.rigorous}}<br />
 					<strong>{{realStateAgency.phone}}</strong>
-			  </td>
+			  	</td>
 			</tr>
 		</tbody>
 	</table>

@@ -21,6 +21,7 @@
     "angular-sanitize": "^1.5.9",
     "jquery": "1.12.4",
     "bootstrap": "^3.3.7",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "angular-lazy-img": "^1.2.2"
   }
 }
