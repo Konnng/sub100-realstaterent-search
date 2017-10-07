@@ -1,3 +1,5 @@
 #!/bin/bash
 
-npm run scrapper
+DIR=$(dirname "$0")
+
+npm run scrapper | tee -a "$DIR/cron.log"
