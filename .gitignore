@@ -1,4 +1,5 @@
 /node_modules
 /web/bower_components
+/web/app/data
 /app/data
 /data/db.json
