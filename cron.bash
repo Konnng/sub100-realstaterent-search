@@ -1,3 +1,3 @@
 #!/bin/bash
 
-node index.js
+npm run scrapper

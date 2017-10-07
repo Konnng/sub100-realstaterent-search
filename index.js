@@ -1,4 +1,8 @@
 
-const scrapper = require('./lib/scrapper')
+process.on('uncaughtException', (err) => { console.log(err) })
 
-scrapper.process()
+try {
+  require('./lib/scrapper').process()
+} catch (err) {
+  console.log('Error: ', err)
+}

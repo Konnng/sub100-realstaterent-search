@@ -14,10 +14,13 @@
     "cheerio": "^0.22.0",
     "co": "^4.6.0",
     "co-request": "^1.0.0",
+    "command-line-args": "^4.0.7",
+    "dedupe": "^2.1.0",
     "ejs": "^2.5.3",
     "fs-extra": "^1.0.0",
     "iconv-lite": "^0.4.15",
     "lowdb": "^0.14.0",
+    "moment": "^2.18.1",
     "path": "^0.12.7",
     "q": "^1.4.1",
     "system-sleep": "^1.0.0-k"
@@ -29,6 +32,6 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
-    "local-web-server": "^1.2.6"
+    "local-web-server": "^1.2.8"
   }
 }
