@@ -20,7 +20,7 @@
     "fs-extra": "^1.0.0",
     "iconv-lite": "^0.4.15",
     "lowdb": "^0.14.0",
-    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
     "path": "^0.12.7",
     "q": "^1.4.1",
     "system-sleep": "^1.0.0-k"
